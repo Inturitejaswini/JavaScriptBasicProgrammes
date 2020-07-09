@@ -15,11 +15,7 @@ exports.checkAnagram = (string1, string2) => {
                     }
                 }
             }
-            if (count === string1.length) {
-                console.log('Anagram');
-            } else {
-                console.log('not a Anagram');
-            }
+            result=(count === string1.length) ? 'anagram' :'not an anagrame';
         } else {
             console.log('not a Anagram');
 
@@ -105,56 +101,36 @@ exports.binarySearch = (sortArray, input) => {
         console.log(mid);
         return (sortArray[mid] != input) ? -1 : mid + 1;
     } catch (error) {
-return error;
+        return error;
     }
 
 }
 
-// exports.findPermutation = (string) => {
-//     let fact = findFact(string);
-//     function findFact(string) {
-//         let factNumber = string.length;
-//         let fact = 1;
-//         while (factNumber !== 0) {
-//             fact = fact * factNumber;
-//             factNumber--;
-//         }
-//         return fact;
-//     }
-//     iteration(fact, string);
-//     function iteration(fact, string) {
-//         let k = 0;
-//         console.log(string[k]);
-//         for (let i = 0; i < fact; i++) {
-//             for (let j = 0; j < string.length; j++) {
-//                 let replacedString = string.replace(string[k], string[j]);
-//                 console.log(replacedString);
-//             }
-//             if (k === string.length) {
-//                 k = 0;
-//             } else {
-//                 k++;
-//             }
-//         }
-//     }
-// }
-
-exports.permutator = (inputArr) => {
-    let result = [];
-
-    const permute = (arr, m = []) => {
-        if (arr.length === 0) {
-            result.push(m)
-        } else {
-            for (let i = 0; i < arr.length; i++) {
-                let curr = arr.slice();
-                let next = curr.splice(i, 1);
-                permute(curr.slice(), m.concat(next))
+exports.findPermutation = (string) => {
+    let fact = findFact(string);
+    function findFact(string) {
+        let factNumber = string.length;
+        let fact = 1;
+        while (factNumber !== 0) {
+            fact = fact * factNumber;
+            factNumber--;
+        }
+        return fact;
+    }
+    iteration(fact, string);
+    function iteration(fact, string) {
+        let k = 0;
+        console.log(string[k]);
+        for (let i = 0; i < fact; i++) {
+            for (let j = 0; j < string.length; j++) {
+                let replacedString = string.replace(string[k], string[j]);
+                console.log(replacedString);
+            }
+            if (k === string.length) {
+                k = 0;
+            } else {
+                k++;
             }
         }
     }
-
-    permute(inputArr)
-
-    return result;
 }

@@ -15,11 +15,12 @@ exports.checkAnagram = (string1, string2) => {
                     }
                 }
             }
-            if (count === string1.length) {
-                console.log('Anagram');
-            } else {
-                console.log('not a Anagram');
-            }
+            // if (count === string1.length) {
+            //     console.log('Anagram');
+            // } else {
+            //     console.log('not a Anagram');
+            // }
+            result=(count === string1.length) ? 'anagram' :'not an anagrame';
         } else {
             console.log('not a Anagram');
 
