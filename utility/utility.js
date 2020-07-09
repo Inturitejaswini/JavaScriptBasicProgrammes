@@ -25,14 +25,13 @@ exports.checkAnagram = (string1, string2) => {
 
         }
     } catch (error) {
-        console.log(error);
-
+        return error;
     }
 },
 
-/**
- * @module(number)couponNumber as user input
- */
+    /**
+     * @module(number)couponNumber as user input
+     */
     exports.toFindCouponNumber = (couponNumber) => {
         try {
             let arr = new Array();
@@ -45,14 +44,13 @@ exports.checkAnagram = (string1, string2) => {
             }
             return arr;
         } catch (error) {
-            console.log(error);
-
+            return error;
         }
     },
 
-/**
- * @module(number)nthNumber as-user input
- */
+    /**
+     * @module(number)nthNumber as-user input
+     */
     exports.harmonicNumber = (nthNum) => {
         try {
             let value = 1;
@@ -61,7 +59,7 @@ exports.checkAnagram = (string1, string2) => {
             }
             console.log(value);
         } catch (error) {
-            console.log(error);
+            return error;
         }
     }
 
@@ -107,8 +105,7 @@ exports.binarySearch = (sortArray, input) => {
         console.log(mid);
         return (sortArray[mid] != input) ? -1 : mid + 1;
     } catch (error) {
-        console.log(error);
-
+return error;
     }
 
 }
@@ -144,20 +141,20 @@ exports.binarySearch = (sortArray, input) => {
 
 exports.permutator = (inputArr) => {
     let result = [];
-  
+
     const permute = (arr, m = []) => {
-      if (arr.length === 0) {
-        result.push(m)
-      } else {
-        for (let i = 0; i < arr.length; i++) {
-          let curr = arr.slice();
-          let next = curr.splice(i, 1);
-          permute(curr.slice(), m.concat(next))
-       }
-     }
-   }
-  
-   permute(inputArr)
-  
-   return result;
-  }
+        if (arr.length === 0) {
+            result.push(m)
+        } else {
+            for (let i = 0; i < arr.length; i++) {
+                let curr = arr.slice();
+                let next = curr.splice(i, 1);
+                permute(curr.slice(), m.concat(next))
+            }
+        }
+    }
+
+    permute(inputArr)
+
+    return result;
+}

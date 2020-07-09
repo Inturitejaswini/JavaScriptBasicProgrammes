@@ -1,8 +1,8 @@
 const readline = require('readline-sync');
 const util = require('../utility/utility');
-let inputArr = readline.question('Enter a string :');
-if (inputArr === '') {
+let string = readline.question('Enter a string :');
+if (string === '') {
     console.log('Give valid input');
 } else {
-    util.permutator(inputArr);
+    util.findPermutation(string);
 }
