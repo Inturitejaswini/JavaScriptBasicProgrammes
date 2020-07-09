@@ -1,3 +1,6 @@
+/**
+ * @module(String,String)string1,string2 - used for checking anagram
+ */
 exports.checkAnagram = (string1, string2) => {
     try {
         string1 = string1.split('');
@@ -27,7 +30,9 @@ exports.checkAnagram = (string1, string2) => {
     }
 },
 
-
+/**
+ * @module(number)couponNumber as user input
+ */
     exports.toFindCouponNumber = (couponNumber) => {
         try {
             let arr = new Array();
@@ -45,7 +50,9 @@ exports.checkAnagram = (string1, string2) => {
         }
     },
 
-
+/**
+ * @module(number)nthNumber as-user input
+ */
     exports.harmonicNumber = (nthNum) => {
         try {
             let value = 1;
@@ -58,7 +65,9 @@ exports.checkAnagram = (string1, string2) => {
         }
     }
 
-
+/**
+ * @module(stake,goal,num)as perameters to find the gambler num.
+ */
 exports.gambler = (stake, goal, num) => {
     let [wins, bets] = [0, 0];
     for (let i = 0; i < num; i++) {
@@ -79,7 +88,10 @@ exports.gambler = (stake, goal, num) => {
     return wins;
 }
 
-
+/**
+ * @module(Array,input)sortArray,
+ * input - sorted array and user input. 
+ */
 exports.binarySearch = (sortArray, input) => {
     try {
         let front = 0, end = sortArray.length - 1, mid = Math.floor((front + end) / 2);
@@ -101,31 +113,51 @@ exports.binarySearch = (sortArray, input) => {
 
 }
 
-exports.findPermutation = (string) => {
-    let fact = findFact(string);
-    function findFact(string) {
-        let factNumber = string.length;
-        let fact = 1;
-        while (factNumber !== 0) {
-            fact = fact * factNumber;
-            factNumber--;
-        }
-        return fact;
-    }
-    iteration(fact, string);
-    function iteration(fact, string) {
-        let k = 0;
-        console.log(string[k]);
-        for (let i = 0; i < fact; i++) {
-            for (let j = 0; j < string.length; j++) {
-                let replacedString = string.replace(string[k], string[j]);
-                console.log(replacedString);
-            }
-            if (k === string.length) {
-                k = 0;
-            } else {
-                k++;
-            }
-        }
-    }
-}
+// exports.findPermutation = (string) => {
+//     let fact = findFact(string);
+//     function findFact(string) {
+//         let factNumber = string.length;
+//         let fact = 1;
+//         while (factNumber !== 0) {
+//             fact = fact * factNumber;
+//             factNumber--;
+//         }
+//         return fact;
+//     }
+//     iteration(fact, string);
+//     function iteration(fact, string) {
+//         let k = 0;
+//         console.log(string[k]);
+//         for (let i = 0; i < fact; i++) {
+//             for (let j = 0; j < string.length; j++) {
+//                 let replacedString = string.replace(string[k], string[j]);
+//                 console.log(replacedString);
+//             }
+//             if (k === string.length) {
+//                 k = 0;
+//             } else {
+//                 k++;
+//             }
+//         }
+//     }
+// }
+
+exports.permutator = (inputArr) => {
+    let result = [];
+  
+    const permute = (arr, m = []) => {
+      if (arr.length === 0) {
+        result.push(m)
+      } else {
+        for (let i = 0; i < arr.length; i++) {
+          let curr = arr.slice();
+          let next = curr.splice(i, 1);
+          permute(curr.slice(), m.concat(next))
+       }
+     }
+   }
+  
+   permute(inputArr)
+  
+   return result;
+  }
