@@ -1,31 +1,24 @@
 /**
  * @module(String,String)string1,string2 - used for checking anagram
  */
-exports.checkAnagram = (string1, string2) => {
-    try {
-        string1 = string1.split('');
-        string2 = string2.split('');
-        if (string1.length === string2.length) {
-            let count = 0;
-            for (let i = 0; i < string1.length; i++) {
-                for (let j = 0; j < string2.length; j++) {
-                    if (string1[i] === string2[j]) {
-                        string2[j] = undefined;
-                        count++;
-                    }
-                }
-            }
-            // if (count === string1.length) {
-            //     console.log('Anagram');
-            // } else {
-            //     console.log('not a Anagram');
-            // }
-            result=(count === string1.length) ? 'anagram' :'not an anagrame';
-        } else {
-            console.log('not a Anagram');
-
-        }
-    } catch (error) {
-        return error;
+exports.checkAnagram = (str1, str2) => {
+  try {
+    str1 = str1.toLowerCase().replace(/[^a-z\d]/g,'').split("");
+    str2 = str2.toLowerCase() .replace(/[^a-z\d]/g,'').split("");
+    if (str1.length === str2.length) {
+      let count = 0;
+      str1.forEach((str) => {
+        str.str2.forEach((str3) => {
+          console.log(str3);
+          if (str1[i] === str2[j]) {
+            str2[j] = undefined;
+            count++;
+          }
+        });
+      });
+      result = count === str1.length ? "anagram" : "not an anagrame";
     }
-}
+  } catch (error) {
+    return error;
+  }
+};
