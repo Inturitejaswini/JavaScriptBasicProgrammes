@@ -82,7 +82,7 @@ exports.gambler = (stake, goal, num) => {
 
 exports.binarySearch = (sortArray, input) => {
     try {
-        let front = 0,end = sortArray.length - 1, mid = Math.floor((front + end) / 2);
+        let front = 0, end = sortArray.length - 1, mid = Math.floor((front + end) / 2);
         console.log(sortArray);
         while (front <= end && sortArray[mid] != input) {
             if (input < sortArray[mid]) {
@@ -101,3 +101,31 @@ exports.binarySearch = (sortArray, input) => {
 
 }
 
+exports.findPermutation = (string) => {
+    let fact = findFact(string);
+    function findFact(string) {
+        let factNumber = string.length;
+        let fact = 1;
+        while (factNumber !== 0) {
+            fact = fact * factNumber;
+            factNumber--;
+        }
+        return fact;
+    }
+    iteration(fact, string);
+    function iteration(fact, string) {
+        let k = 0;
+        console.log(string[k]);
+        for (let i = 0; i < fact; i++) {
+            for (let j = 0; j < string.length; j++) {
+                let replacedString = string.replace(string[k], string[j]);
+                console.log(replacedString);
+            }
+            if (k === string.length) {
+                k = 0;
+            } else {
+                k++;
+            }
+        }
+    }
+}
