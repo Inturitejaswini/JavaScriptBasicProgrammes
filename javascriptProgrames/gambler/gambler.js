@@ -1,6 +1,6 @@
 
 let input = require('readline-sync');
-let Object = require('../utility/utility');
+let Object = require('./gamblerBL');
 let stake = input.questionInt('Enter stake');
 let goal = input.questionInt('Enter goal');
 let num = input.questionInt('Enter number of times you want to play');
