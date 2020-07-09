@@ -7,11 +7,7 @@ exports.binarySearch = (sortArray, input) => {
         let front = 0, end = sortArray.length - 1, mid = Math.floor((front + end) / 2);
         console.log(sortArray);
         while (front <= end && sortArray[mid] != input) {
-            if (input < sortArray[mid]) {
-                end = mid - 1;
-            } else {
-                front = mid + 1;
-            }
+            result= (input < sortArray[mid]) ? end = mid - 1 : front = mid + 1;
             mid = Math.floor((front + end) / 2);
         }
         console.log(mid);
