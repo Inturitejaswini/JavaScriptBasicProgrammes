@@ -10,7 +10,7 @@ if (input === '') {
     console.log('Give valid input');
 } else {
     let isDataPresent = util.binarySearch(splitString, input);
-    if (isDataPresent>1) {
+    if (isDataPresent>-1) {
         console.log('Word is present in a file');
     } else {
         console.log('Word is not present in a file');
