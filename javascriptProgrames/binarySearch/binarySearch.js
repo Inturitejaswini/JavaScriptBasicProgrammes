@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const util = require('../utility/utility');
+const util = require('./binarySearchBL');
 let fs = require('fs');
 var contents = fs.readFileSync('teja.txt', 'utf8');
 let replacedContents = contents.replace(',', ' ');
