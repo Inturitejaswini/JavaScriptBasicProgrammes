@@ -10,7 +10,7 @@ exports.gambler = (stake, goal, num) => {
     let temp = stake;
     while (temp > 0 && temp < goal) {
       bets++;
-      let result = Math.random() < 0.5 ? temp++ : temp--;
+      let result = (Math.random() < 0.5) ? temp++ : temp--;
       console.log(result);
     }
     if (temp == goal) {
