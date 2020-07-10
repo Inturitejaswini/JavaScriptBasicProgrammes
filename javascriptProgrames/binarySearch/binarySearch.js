@@ -1,8 +1,8 @@
 /**
  * Execution   : default node    cmd>node.binarySearch.js
- * 
+ *
  * purpose     : To find a word from a file
- *  
+ *
  * @description :Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
  * @file        :binarySearch.js
  * @overview    :To find a word given by user from a file
@@ -20,7 +20,10 @@ try {
   splitString.sort();
   let input = readline.question("Enter a word to search in a file : ");
   let isDataPresent = util.binarySearch(splitString, input);
-  let isDataPresent =(isDataPresent > -1) ? "Word is present in a file" : "Word is not present in a file";
+  let isDataPresent =
+    isDataPresent > -1
+      ? "Word is present in a file"
+      : "Word is not present in a file";
   console.log(isDataPresent);
 } catch (err) {
   console.log(err);
