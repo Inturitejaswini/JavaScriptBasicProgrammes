@@ -1,5 +1,7 @@
 /**
- * @module(stake,goal,num)as perameters to find the gambler num.
+ * @author: Tejaswini
+ * @Purpose : To find percentage of wins and loss given the stake and number of attempts
+ * @Since : 10-07-2020
  */
 exports.gambler = (stake, goal, num) => {
   let [wins, bets] = [0, 0];
