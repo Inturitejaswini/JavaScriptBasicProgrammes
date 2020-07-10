@@ -20,56 +20,61 @@ exports.checkAnagram = (str1, str2) => {
           }
         });
       });
-     let result = (count === str1.length) ? "anagram" : "not an anagrame";
-     console.log(result);
+      let result = count === str1.length ? "anagram" : "not an anagrame";
+      console.log(result);
     }
   } catch (error) {
     return error;
   }
 };
-  /** 
+/** 
   @purpose :To find coupon number.
   @Auther :Tejaswini
   @version:  1.0
   @return 
   @Since : 9-07-2020
   **/
- exports.toFindCouponNumber = (couponNumber) => {
+exports.toFindCouponNumber = (couponNumber) => {
   try {
-      let arr = new Array();
-      while (true) {
-          let randomCouponNumber = Math.round(Math.random() * couponNumber);
-          arr.push(randomCouponNumber);
-          if (couponNumber == randomCouponNumber) {
-              break;
-          }
+    let arr = new Array();
+    while (true) {
+      let randomCouponNumber = Math.round(Math.random() * couponNumber);
+      arr.push(randomCouponNumber);
+      if (couponNumber == randomCouponNumber) {
+        break;
       }
-      return arr;
-  } catch (error) {
-      return error;
-  }
-}
-  /**
-   * @module(number)nthNumber as-user input
-   */
-  (exports.harmonicNumber = (nthNum) => {
-    try {
-      let value = 1;
-      for (let index = 2; index <= nthNum; index++) {
-        value = value + 1 / index;
-      }
-      console.log(value);
-    } catch (error) {
-      return error;
     }
-  });
+    return arr;
+  } catch (error) {
+    return error;
+  }
+};
+/**
+ * @Auther :Tejaswini
+ * @param { User input } nthNum
+ * @purpose : this function is use to find the harmonic number for an given user input.
+ * @Since : 10-07-2020
+ */
+exports.harmonicNumber = (nthNum) => {
+  try {
+    let value = 1;
+    for (let index = 2; index <= nthNum; index++) {
+      value = value + 1 / index;
+    }
+    console.log(value);
+  } catch (error) {
+    return error;
+  }
+};
 
 /**
- * @module(stake,goal,num)as perameters to find the gambler num.
+ * @author: Tejaswini
+ * @Purpose : To find percentage of wins and loss given the stake and number of attempts
+ * @Since : 10-07-2020
  */
 exports.gambler = (stake, goal, num) => {
   let [wins, bets] = [0, 0];
-  for(let i in num) {
+  for (let i in num) {
     console.log(num);
     let temp = stake;
     while (temp > 0 && temp < goal) {
@@ -80,10 +85,9 @@ exports.gambler = (stake, goal, num) => {
     if (temp == goal) {
       wins++;
     }
-  };
+  }
   return wins;
 };
-
 
 /**@author: Tejaswini
  * @purpose : This function is use to find the search iteam into the sorted array using Binary Search for String!!
@@ -108,7 +112,12 @@ exports.binarySearch = (sortArray, input) => {
   }
 };
 
-
+/**
+ * @Auther :Tejaswini
+ * @param { User input } string
+ * @purpose : this function is use to find the permutations for an given user input string.
+ * @Since : 10-07-2020
+ */
 exports.findPermutation = (string) => {
   let fact = findFact(string);
   function findFact(string) {
