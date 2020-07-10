@@ -1,4 +1,5 @@
-/**@author: Tejaswini
+/**
+ * @author: Tejaswini
  * @purpose : This function is use to find the search iteam into the sorted array using Binary Search for String!!
  * @Since : 9-07-2020
  * @param {Sorted Array} sortArray
@@ -11,7 +12,8 @@ exports.binarySearch = (sortArray, input) => {
       mid = Math.floor((front + end) / 2);
     console.log(sortArray);
     while (front <= end && sortArray[mid] != input) {
-      result = input < sortArray[mid] ? (end = mid - 1) : (front = mid + 1);
+     let  result = (input < sortArray[mid]) ? (end = mid - 1) : (front = mid + 1);
+     console.log(result)
       mid = Math.floor((front + end) / 2);
     }
     console.log(mid);
