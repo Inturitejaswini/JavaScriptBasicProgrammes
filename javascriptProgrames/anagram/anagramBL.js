@@ -20,7 +20,8 @@ exports.checkAnagram = (str1, str2) => {
           }
         });
       });
-      result = count === str1.length ? "anagram" : "not an anagrame";
+     let result = count === str1.length ? "anagram" : "not an anagrame";
+     console.log(result);
     }
   } catch (error) {
     return error;
