@@ -1,16 +1,14 @@
 /**
- * @module(String,String)string1,string2 - used for checking anagram
+ * @Auther :Tejaswini
+ * @param {First User input } str1
+ * @param {Second user input} str2
+ * @purpose : this function is use to check entered two user input String is Anagram or not !!
+ * @Since : 9-07-2020
  */
-(exports.checkAnagram = (str1, str2) => {
+exports.checkAnagram = (str1, str2) => {
   try {
-    str1 = str1
-      .toLowerCase()
-      .replace(/[^a-z\d]/g, "")
-      .split("");
-    str2 = str2
-      .toLowerCase()
-      .replace(/[^a-z\d]/g, "")
-      .split("");
+    str1 = str1.toLowerCase().replace(/[^a-z\d]/g, "").split("");
+    str2 = str2.toLowerCase().replace(/[^a-z\d]/g, "").split("");
     if (str1.length === str2.length) {
       let count = 0;
       str1.forEach((str) => {
@@ -22,30 +20,35 @@
           }
         });
       });
-      result = count === str1.length ? "anagram" : "not an anagrame";
+     let result = (count === str1.length) ? "anagram" : "not an anagrame";
+     console.log(result);
     }
   } catch (error) {
     return error;
   }
-}),
-  /**
-   * @module(number)couponNumber as user input
-   */
-  (exports.toFindCouponNumber = (couponNumber) => {
-    try {
+};
+  /** 
+  @purpose :To find coupon number.
+  @Auther :Tejaswini
+  @version:  1.0
+  @return 
+  @Since : 9-07-2020
+  **/
+ exports.toFindCouponNumber = (couponNumber) => {
+  try {
       let arr = new Array();
       while (true) {
-        let randomCouponNumber = Math.round(Math.random() * couponNumber);
-        arr.push(randomCouponNumber);
-        if (couponNumber == randomCouponNumber) {
-          break;
-        }
+          let randomCouponNumber = Math.round(Math.random() * couponNumber);
+          arr.push(randomCouponNumber);
+          if (couponNumber == randomCouponNumber) {
+              break;
+          }
       }
       return arr;
-    } catch (error) {
+  } catch (error) {
       return error;
-    }
-  }),
+  }
+}
   /**
    * @module(number)nthNumber as-user input
    */
@@ -66,26 +69,27 @@
  */
 exports.gambler = (stake, goal, num) => {
   let [wins, bets] = [0, 0];
-  for (let i = 0; i < num; i++) {
+  for(let i in num) {
+    console.log(num);
     let temp = stake;
     while (temp > 0 && temp < goal) {
       bets++;
-      if (Math.random() < 0.5) {
-        temp++;
-      } else {
-        temp--;
-      }
+      let result = Math.random() < 0.5 ? temp++ : temp--;
+      console.log(result);
     }
     if (temp == goal) {
       wins++;
     }
-  }
+  };
   return wins;
 };
 
-/**
- * @module(Array,input)sortArray,
- * input - sorted array and user input.
+
+/**@author: Tejaswini
+ * @purpose : This function is use to find the search iteam into the sorted array using Binary Search for String!!
+ * @Since : 9-07-2020
+ * @param {Sorted Array} sortArray
+ * @param {Search item} input
  */
 exports.binarySearch = (sortArray, input) => {
   try {
@@ -104,6 +108,7 @@ exports.binarySearch = (sortArray, input) => {
   }
 };
 
+
 exports.findPermutation = (string) => {
   let fact = findFact(string);
   function findFact(string) {
@@ -119,16 +124,15 @@ exports.findPermutation = (string) => {
   function iteration(fact, string) {
     let k = 0;
     console.log(string[k]);
-    for (let i = 0; i < fact; i++) {
-      for (let j = 0; j < string.length; j++) {
+    fact.forEach((factorial) => {
+      console.log(factorial);
+      factorial.string.forEach((stringFact) => {
+        console.log(stringFact);
         let replacedString = string.replace(string[k], string[j]);
         console.log(replacedString);
-      }
-      if (k === string.length) {
-        k = 0;
-      } else {
-        k++;
-      }
-    }
+      });
+    });
+    let result = k === string.length ? (k = 0) : k++;
+    console.log(result);
   }
 };

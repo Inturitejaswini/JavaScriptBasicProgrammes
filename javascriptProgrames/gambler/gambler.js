@@ -1,4 +1,15 @@
-
+/**
+ * Execution   : default node    cmd>node.gambler.js
+ * 
+ * purpose     : To find who wins the gamble
+ * 
+ * @description :Simulates a gambler who start with $stake and place fair $1 bets until he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of times he/she wins and the number of bets he/she makes. Run the experiment N times, averages the results, and prints them out.
+ * @file        :gambler.js
+ * @overview    :Generate random numbers and find who wins the gamble
+ * @author      :Tejaswini
+ * @version     :1.0
+ * @since       :10-07-2020
+ * */
 let input = require('readline-sync');
 let gamblerObject = require('./gamblerBL');
 try{
