@@ -27,7 +27,7 @@ exports.findPermutation = (string) => {
         console.log(replacedString);
       });
     });
-    let result = k === string.length ? (k = 0) : k++;
+    let result = (k === string.length) ? (k = 0) : k++;
     console.log(result);
   }
 };
