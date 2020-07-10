@@ -1,10 +1,20 @@
 /**
- * @module(String,String)string1,string2 - used for checking anagram
+ * @Auther :Tejaswini
+ * @param {First User input } str1
+ * @param {Second user input} str2
+ * @purpose : this function is use to check entered two user input String is Anagram or not !!
+ * @Since : 9-07-2020
  */
 exports.checkAnagram = (str1, str2) => {
   try {
-    str1 = str1.toLowerCase().replace(/[^a-z\d]/g,'').split("");
-    str2 = str2.toLowerCase() .replace(/[^a-z\d]/g,'').split("");
+    str1 = str1
+      .toLowerCase()
+      .replace(/[^a-z\d]/g, "")
+      .split("");
+    str2 = str2
+      .toLowerCase()
+      .replace(/[^a-z\d]/g, "")
+      .split("");
     if (str1.length === str2.length) {
       let count = 0;
       str1.forEach((str) => {
