@@ -1,10 +1,9 @@
 /**
  * Execution   : default node    cmd>node.mergeSort.js
  * 
- * purpose     : to sort the given number
+ * purpose     : To find the sorted array using the sorting technique called "Merge Sort".
  * 
- * 
- * @description :program to do Merge Sort of list of Strings.
+ * @description :program to do Merge Sort of list of numbers.
  * @file        :mergeSort.js
  * @overview    :sorting using merge sort algorithm
  * @author      :Tejaswini
