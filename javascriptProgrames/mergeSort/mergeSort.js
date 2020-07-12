@@ -12,5 +12,9 @@
  * */
 const readline = require("readline-sync");
 const input = require('./mergeSortBL');
+try{
 let arr = [12, 43, 23, 3, 36, 45, 7, 11, 19];
 input.mergeSort(arr);
+}catch(err){
+    console.log(err)
+}

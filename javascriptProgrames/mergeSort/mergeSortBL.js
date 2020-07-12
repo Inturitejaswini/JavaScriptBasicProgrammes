@@ -1,3 +1,9 @@
+/**
+ * @author: Tejaswini
+ * @purpose : To find the sorted array using the sorting technique called "Merge Sort"
+ * @Since : 10-07-2020
+ * @param { User input } array
+ */
 exports.mergeSort = (array) => {
   function dividing(array) {
     if (array.length < 2) {

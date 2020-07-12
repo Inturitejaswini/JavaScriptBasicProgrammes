@@ -20,11 +20,9 @@ try {
   splitString.sort();
   let input = readline.question("Enter a word to search in a file : ");
   let isDataPresent = util.binarySearch(splitString, input);
-  let isDataPresent =
-    isDataPresent > -1
+   ( isDataPresent > -1)
       ? "Word is present in a file"
       : "Word is not present in a file";
-  console.log(isDataPresent);
 } catch (err) {
   console.log(err);
 }

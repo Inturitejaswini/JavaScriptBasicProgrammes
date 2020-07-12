@@ -9,7 +9,6 @@ exports.inventory=()=>{
       let text=fs.readFileSync('./inventoryDataManagement.json').toString('utf-8');
       let jsonText=JSON.parse(text);
       console.log(jsonText)
-
       if(text == '') throw "File is Empty"
       for(let data in jsonText.Grocery){
           for(let i=0;i<jsonText.Grocery[data].length;i++){
@@ -17,7 +16,6 @@ exports.inventory=()=>{
               let weight = jsonText.Grocery[data[i]].Weigth;
               let price = jsonText.Grocery[data[i]].PricePerKg;
               console.log('Name is : ' + name + ' ; Weight is : ' + weight + ' ; Prices is : ' + price + ' ; Total price is : ' + price * weight);
-
           }
       }
     }catch(err){

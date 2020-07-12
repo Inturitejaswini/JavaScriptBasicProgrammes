@@ -13,9 +13,13 @@ const readline = require("readline-sync");
 const util = require("./couponNumberBL");
 try {
   let couponNumber = readline.question("Enter coupon no : ");
+  let reg = new RegExp("^$|^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3}[a-zA-Z])+)$");
+  if((reg).test(couponNumber)){
+  console.log("give valid input");
+}
   let arr = util.toFindCouponNumber(couponNumber);
   let set = new Set(arr);
-  console.log("random distinct numbers in" + set.size + 1 + " attempt");
+  console.log("random distinct numbers in " + set.size + 1 + " attempt");
 } catch (err) {
   console.log;
 }

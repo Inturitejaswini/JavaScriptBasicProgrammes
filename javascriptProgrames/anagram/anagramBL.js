@@ -7,21 +7,21 @@
  */
 exports.checkAnagram = (str1, str2) => {
   try {
-    str1 = str1.toLowerCase().replace(/[^a-z\d]/g, "").split("");
-    str2 = str2.toLowerCase().replace(/[^a-z\d]/g, "").split("");
+    str1 = str1.split("").join("");
+    str2 = str2.split("").join("");
     if (str1.length === str2.length) {
       let count = 0;
-      str1.forEach((str) => {
-        str.str2.forEach((str3) => {
-          console.log(str3);
+      str1.forEach((i) => {
+        i.str2.forEach((j) => {
           if (str1[i] === str2[j]) {
             str2[j] = undefined;
             count++;
           }
         });
-      });
-     let result = (count === str1.length) ? "anagram" : "not an anagrame";
-     console.log(result);
+      })
+      (count === str1.length) ? "Anagram"  : "not a Anagram"
+    } else {
+      console.log("not a Anagram");
     }
   } catch (error) {
     return error;

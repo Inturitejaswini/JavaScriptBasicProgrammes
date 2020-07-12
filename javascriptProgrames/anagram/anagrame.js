@@ -16,7 +16,10 @@ console.log("Program to check anagram");
 try {
   let str1 = readline.question("Enter the first String : ");
   let str2 = readline.question("Enter the second String : ");
-  console.log("Give proper input");
+  let patt = new RegExp("^$|^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3}^[0-9])+)$");
+  if((patt).test(str1,str2)){
+  console.log("give valid input");
+}
   util.checkAnagram(str1, str2);
 } catch (err) {
   console.log(err);

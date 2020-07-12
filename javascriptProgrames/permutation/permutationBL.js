@@ -19,15 +19,13 @@ exports.findPermutation = (string) => {
   function iteration(fact, string) {
     let k = 0;
     console.log(string[k]);
-    fact.forEach((factorial) => {
-      console.log(factorial);
-      factorial.string.forEach((stringFact) => {
-        console.log(stringFact);
-        let replacedString = string.replace(string[k], string[j]);
+    let holder;
+    for (let i = 0; i < fact; i++) {
+      for (let j = 0; j < string.length; j++) {
+         replacedString = string.replace(string[k], string[j]);
         console.log(replacedString);
-      });
-    });
-    let result = (k === string.length) ? (k = 0) : k++;
-    console.log(result);
+      }
+      (k === string.length) ? (k = 0) : k++;
+    }
   }
 };
