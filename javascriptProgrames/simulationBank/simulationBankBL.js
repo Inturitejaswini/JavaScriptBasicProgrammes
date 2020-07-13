@@ -35,5 +35,41 @@ exports.queue = (bankStatus) => {
       console.log(string);
     }
   }
+  let que = new Queue();
+  let balance = 0;
+  switch (bankStatus.toLowerCase()) {
+    case "withdraw":
+      let withdrawAmount = readline.questionInt(
+        "Please mention the amount to withdraw : "
+      );
+      que.enqueue(withdrawAmount);
+      withdraw(withdrawAmount);
+      break;
+    case "deposit":
+      let depositAmount = readline.questionInt(
+        "Please mention the amount to deposit : "
+      );
+      que.enqueue(depositAmount);
+      deposit(depositAmount);
+      break;
+    default:
+      console.log("Give valid input");
+      break;
+  }
+  function withdraw(withdrawAmount) {
+    if (balance >= withdrawAmount) {
+      balance = balance - withdrawAmount;
+      console.log("withdraw Successful, Your current balance is " + balance);
+      userRequest();
+    } else {
+      console.log("you have insufficient balance,Your balance is " + balance);
+      userRequest();
+    }
+  }
+  function deposit(depositAmount) {
+    balance = balance + depositAmount;
+    console.log("deposit successful your current balance is " + balance);
+    userRequest();
+  }
   
 };
