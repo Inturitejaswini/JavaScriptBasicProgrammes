@@ -71,5 +71,29 @@ exports.queue = (bankStatus) => {
     console.log("deposit successful your current balance is " + balance);
     userRequest();
   }
-  
+  function userRequest() {
+    let action = readline.question(
+      "Furthur do you like to deposit money or withdraw available balance or cancel your request :"
+    );
+    switch (action.toLowerCase()) {
+      case "withdraw":
+        let withAmount = readline.questionInt(
+          "Please mention the amount to withdraw : "
+        );
+        withdraw(withAmount);
+        break;
+      case "deposit":
+        let depAmount = readline.questionInt(
+          "Please mention the amount to deposit : "
+        );
+        deposit(depAmount);
+        break;
+      case "cancel":
+        que.dequeue();
+        break;
+      default:
+        console.log("invalid input");
+        break;
+    }
+  }
 };
