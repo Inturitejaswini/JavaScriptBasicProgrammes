@@ -1,3 +1,10 @@
+/**
+ * @Auther :Tejaswini
+ * @module hashingFunction
+ * @param {userInput} data.
+ * @purpose : this function is use to check entered user input data is used to store and fetch the no from file.
+ * @Since : 13-07-2020
+ */
 exports.hashingFunction = (data) => {
   class HashTable {
     constructor() {
