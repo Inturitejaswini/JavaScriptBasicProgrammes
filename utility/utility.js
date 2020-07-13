@@ -58,13 +58,15 @@ exports.toFindCouponNumber = (couponNumber) => {
  */
 exports.harmonicNumber = (nthNum) => {
   try {
-    let value = 1;
-    for (let index = 2; index <= nthNum; index++) {
-      value = value + 1 / index;
+    let sum = 0.0;
+    if (nthNum != 0) {
+      for (let i = 1; i <= nthNum; i++) {
+        sum = sum + 1 / i;
+      }
+      console.log( sum);
     }
-    console.log(value);
-  } catch (error) {
-    return error;
+  } catch (err) {
+    return err;
   }
 };
 
