@@ -7,26 +7,27 @@
  */
 exports.checkAnagram = (str1, str2) => {
   try {
-    str1 = str1.toLowerCase().replace(/[^a-z\d]/g, "").split("");
-    str2 = str2.toLowerCase().replace(/[^a-z\d]/g, "").split("");
+    str1 = str1.split("").join("");
+    str2 = str2.split("").join("");
     if (str1.length === str2.length) {
       let count = 0;
-      str1.forEach((str) => {
-        str.str2.forEach((str3) => {
-          console.log(str3);
+      str1.forEach((i) => {
+        i.str2.forEach((j) => {
           if (str1[i] === str2[j]) {
             str2[j] = undefined;
             count++;
           }
         });
-      });
-      let result = count === str1.length ? "anagram" : "not an anagrame";
-      console.log(result);
+      })
+      (count === str1.length) ? "Anagram"  : "not a Anagram"
+    } else {
+      console.log("not a Anagram");
     }
   } catch (error) {
     return error;
   }
 };
+
 /** 
   @purpose :To find coupon number.
   @Auther :Tejaswini
@@ -89,7 +90,8 @@ exports.gambler = (stake, goal, num) => {
   return wins;
 };
 
-/**@author: Tejaswini
+/**
+ * @author: Tejaswini
  * @purpose : This function is use to find the search iteam into the sorted array using Binary Search for String!!
  * @Since : 9-07-2020
  * @param {Sorted Array} sortArray
@@ -102,7 +104,7 @@ exports.binarySearch = (sortArray, input) => {
       mid = Math.floor((front + end) / 2);
     console.log(sortArray);
     while (front <= end && sortArray[mid] != input) {
-      result = input < sortArray[mid] ? (end = mid - 1) : (front = mid + 1);
+     (input < sortArray[mid]) ? (end = mid - 1) : (front = mid + 1)
       mid = Math.floor((front + end) / 2);
     }
     console.log(mid);
