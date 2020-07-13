@@ -10,15 +10,10 @@
  * @version     :1.0
  * @since       :10-07-2020
  * */
-// let input = require("readline-sync");
-// let inventoryObject = require("./inventoryDataManagementBL");
-// try {
-//   inventoryObject.inventory();
-// } catch (err) {
-//   console.log(err);
-// }
-const util = require("./inventoryDataManagementBL");
-const fs = require("fs");
-fs.readFile("./inventoryDataManagement.json", function (err, data) {
-  err ? console.log(err) : fs.writeFileSync(util.inventory(data));
-});
+let input = require("readline-sync");
+let inventoryObject = require("./inventoryDataManagementBL");
+try {
+  inventoryObject.inventory();
+} catch (err) {
+  console.log(err);
+}

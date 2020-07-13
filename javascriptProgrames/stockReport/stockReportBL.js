@@ -1,3 +1,11 @@
+
+/**
+ * @Auther :Tejaswini
+ * @module stockReport
+ * @param { User input } data
+ * @purpose : this function is use to check entered user input data is to find total share of each stock and total price of all the stock.
+ * @Since : 13-07-2020
+ */
 exports.stockAccountManagement = (data) => {
   /**
    * .StockAccountManagement
