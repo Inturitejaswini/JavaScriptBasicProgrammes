@@ -1,5 +1,14 @@
+/**
+ * @module queue
+ * @param {String} bankStatus - user input
+ * @purpose : this function is use to check entered  user input String is withdraw or deposit amount using queue.
+ * @Since : 13-07-2020
+ */
 const readline = require("readline-sync");
 exports.queue = (bankStatus) => {
+    /**
+     * Queue.
+     */
   class Queue {
     constructor() {
       this.queue = [];
@@ -56,6 +65,10 @@ exports.queue = (bankStatus) => {
       console.log("Give valid input");
       break;
   }
+  /**
+     * withdraw.
+     * @param	mixed	withdrawAmount
+     */
   function withdraw(withdrawAmount) {
     if (balance >= withdrawAmount) {
       balance = balance - withdrawAmount;
@@ -66,11 +79,20 @@ exports.queue = (bankStatus) => {
       userRequest();
     }
   }
+  /**
+     * deposit.
+     * @param	mixed	depositAmount	
+     * @return	void
+     */
   function deposit(depositAmount) {
     balance = balance + depositAmount;
     console.log("deposit successful your current balance is " + balance);
     userRequest();
   }
+  /**
+     * userRequest.
+     * @return	void
+     */
   function userRequest() {
     let action = readline.question(
       "Furthur do you like to deposit money or withdraw available balance or cancel your request :"
