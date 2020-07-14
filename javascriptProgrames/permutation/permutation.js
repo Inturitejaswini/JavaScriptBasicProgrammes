@@ -14,10 +14,10 @@ const readline = require("readline-sync");
 const util = require("./permutationBL");
 try {
   let string = readline.question("Enter a string :");
-  let reg = new RegExp("^$|^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3}^[0-9])+)$");
-  if((reg).test(string)){
-  console.log("give valid input");
-}
+  let reg = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3}^[0-9])+)$");
+  if (reg.test(string)) {
+    console.log("give valid input");
+  }
   util.findPermutation(string);
 } catch (err) {
   console.log(err);

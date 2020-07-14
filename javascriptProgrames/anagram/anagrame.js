@@ -18,7 +18,7 @@ try {
   let secondString = readline.question("Enter the second String : ");
   let regex = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3})+)$");
   if (regex.test(firstString, secondString)) {
-    throw ("invalid user input")
+    throw "invalid user input";
   }
   util.checkAnagram(firstString, secondString);
 } catch (err) {
