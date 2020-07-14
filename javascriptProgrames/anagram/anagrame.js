@@ -14,13 +14,13 @@ const readline = require("readline-sync");
 const util = require("./anagramBL");
 console.log("Program to check anagram");
 try {
-  let str1 = readline.question("Enter the first String : ");
-  let str2 = readline.question("Enter the second String : ");
-  let patt = new RegExp("^$|^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3}^[0-9])+)$");
-  if((patt).test(str1,str2)){
-  console.log("give valid input");
-}
-  util.checkAnagram(str1, str2);
+  let firstString = readline.question("Enter the first String : ");
+  let secondString = readline.question("Enter the second String : ");
+  let regex = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3})+)$");
+  if (regex.test(firstString, secondString)) {
+    throw ("invalid user input")
+  }
+  util.checkAnagram(firstString, secondString);
 } catch (err) {
   console.log(err);
 }

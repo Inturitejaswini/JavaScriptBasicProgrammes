@@ -9,7 +9,6 @@ exports.inventory=()=>{
       let text=fs.readFileSync('./inventoryDataManagement.json').toString('utf-8');
       let jsonText=JSON.parse(text);
       console.log(jsonText)
-      if(text == '') throw "File is Empty"
       for(let data in jsonText.Grocery){
           for(let i=0;i<jsonText.Grocery[data].length;i++){
               let name = jsonText.Grocery[data[i]].name;

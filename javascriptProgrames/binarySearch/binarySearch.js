@@ -19,10 +19,14 @@ try {
   let splitString = replacedContents.split(" ");
   splitString.sort();
   let input = readline.question("Enter a word to search in a file : ");
+  let reg = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3})+)$");
+  if (reg.test(input)) {
+    console.log("give valid input");
+  }
   let isDataPresent = util.binarySearch(splitString, input);
-   ( isDataPresent > -1)
-      ? "Word is present in a file"
-      : "Word is not present in a file";
+  isDataPresent > -1
+    ? "Word is present in a file"
+    : "Word is not present in a file";
 } catch (err) {
   console.log(err);
 }

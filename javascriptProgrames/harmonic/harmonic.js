@@ -14,8 +14,8 @@ let readline = require("readline-sync");
 let util = require("./harmonicBL");
 try {
   let nthNum = readline.question("Enter the nth harmonic no :");
-  let patt = new RegExp("^[a-zA-Z]+$");
-  if((patt).test(nthNum)){
+  let reg = new RegExp("^[a-zA-Z]+$");
+  if((reg).test(nthNum)){
 console.log("give valid input");
 }
   util.harmonicNumber(nthNum);

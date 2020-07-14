@@ -10,11 +10,11 @@
  * @version     :1.0
  * @since       :13-07-2020
  * */
-const access = require('./stockReportBL');
+const util = require('./stockReportBL');
 const fs = require('fs');
 try{
-let pkg = JSON.parse(fs.readFileSync('./stockReport.json'));
-access.stockAccountManagement(pkg);
+let input = JSON.parse(fs.readFileSync('./stockReport.json'));
+util.stockAccountManagement(input);
 }catch(err){
     console.log(err);
 }
