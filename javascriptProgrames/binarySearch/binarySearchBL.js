@@ -15,7 +15,7 @@ exports.binarySearch = (sortArray, input) => {
       input < sortArray[mid] ? (end = mid - 1) : (front = mid + 1);
       mid = Math.floor((front + end) / 2);
     }
-    console.log(mid);
+    console.log(mid)
     return sortArray[mid] != input ? -1 : mid + 1;
   } catch (error) {
     return error;

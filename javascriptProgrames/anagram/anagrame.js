@@ -16,11 +16,14 @@ console.log("Program to check anagram");
 try {
   let firstString = readline.question("Enter the first String : ");
   let secondString = readline.question("Enter the second String : ");
-  let regex = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3})+)$");
-  if (regex.test(firstString, secondString)) {
-    throw "invalid user input";
+  let regex=new RegExp("^[0-9]+$");
+  let regex1 = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3})+)$");
+  if (regex1.test(firstString, secondString)) {
+    throw "Input should not be empty";
+  }else if(regex.test(firstString, secondString)){
+    throw "input must be string type"
   }
-  util.checkAnagram(firstString, secondString);
+  util.isAnagram(firstString, secondString);
 } catch (err) {
   console.log(err);
 }

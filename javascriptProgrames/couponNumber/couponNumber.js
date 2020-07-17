@@ -14,8 +14,11 @@ const util = require("./couponNumberBL");
 try {
   let couponNumber = readline.question("Enter coupon no : ");
   let reg = new RegExp("^$|^([w.-]+)@([w-]+)((.(w){2,3}[a-zA-Z])+)$");
+  let regex = new RegExp("^[a-zA-Z]+$");
   if (reg.test(couponNumber)) {
-     console.log("give valid input");
+    throw "input should not be empty";
+  } else if (regex.test(couponNumber)) {
+    throw "input must be number type"
   }
   let arr = util.toFindCouponNumber(couponNumber);
   let set = new Set(arr);

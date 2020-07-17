@@ -1,31 +1,20 @@
 /**
  * @Auther :Tejaswini
- * @param {First User input } str1
- * @param {Second user input} str2
+ * @param {First User input } firstString
+ * @param {Second user input} secondString
  * @purpose : this function is use to check entered two user input String is Anagram or not !!
  * @Since : 9-07-2020
  */
 
-exports.checkAnagram = (firstString, secondString) => {
-  try {
-    firstString = firstString.split("").join("");
-    secondString = secondString.split("").join("");
-    if (firstString.length === secondString.length) {
-      let count = 0;
-      firstString.forEach((i) => {
-        i.secondString.forEach((j) => {
-          if (firstString[i] === secondString[j]) {
-            secondString[j] = undefined;
-            count++;
-          }
-        });
-      })(count === firstString.length)
-        ? "Anagram"
-        : "not a Anagram";
-    } else {
-      console.log("not a Anagram");
-    }
-  } catch (error) {
-    return error;
+exports.isAnagram = (firstString, secondString) => {
+  firstString = firstString.split("").sort().join("");
+  secondString = secondString.split("").sort().join("");
+  check = true;
+  if (firstString.length != secondString.length) {
+    console.log("Not an anagram");
+    check = false;
+  }
+  if (check) {
+    (firstString === secondString) ? console.log("Anagram") : console.log("not a anagram");
   }
 };
